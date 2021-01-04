@@ -5,13 +5,13 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @RequiredArgsConstructor
-public class Person {
+public class Block {
     @Id
     @GeneratedValue
     private Long id;
@@ -19,14 +19,10 @@ public class Person {
     @NonNull
     private String name;
 
-    @NonNull
-    private int age;
+    private String reason;
 
-    @NonNull
-    private String bloodType;
+    private LocalDate startDate;
 
-    @ToString.Exclude
-    private String phoneNumber;
+    private LocalDate endDate;
 
-    private boolean block;
 }
