@@ -18,15 +18,16 @@ class BlockRepositoryTest {
     @Test
     void create() {
         Block block = new Block();
-        block.setName("흠냐리");
-        block.setReason("스토커임");
+        block.setId(3L);
+        block.setName("SON");
+        block.setReason("just hate");
         block.setStartDate(LocalDate.now());
         block.setEndDate(LocalDate.now().plusDays(10));
 
         blockRepository.save(block);
         List<Block> blocks = blockRepository.findAll();
 
-        assertThat(blocks.size()).isEqualTo(1);
-        assertThat(blocks.get(0).getName()).isEqualTo("흠냐리");
+        assertThat(blocks.size()).isEqualTo(3);
+        assertThat(blocks.get(2).getName()).isEqualTo("SON");
     }
 }

@@ -15,11 +15,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class Birthday {
-    private int yearOfBirthday;
+    private Integer yearOfBirthday;
 
-    private int monthOfBirthday;
+    private Integer monthOfBirthday;
 
-    private int dayOfBirthday;
+    private Integer dayOfBirthday;
 
     // @AllArgsConstructor 때문에 해당 생성자가 인식되지 않았음
     // TODO: 조사필요

@@ -16,13 +16,13 @@ public class PersonRepositoryTest {
     @Test
     void create() {
         Person person = new Person();
-        person.setName("Son");
-        person.setAge(33);
+        person.setName("YOU");
+        person.setAge(4);
         personRepository.save(person);
         List<Person> people = personRepository.findAll();
-        assertThat(people.size()).isEqualTo(1);
-        assertThat(people.get(0).getName()).isEqualTo("Son");
-        assertThat(people.get(0).getAge()).isEqualTo(33);
+        assertThat(people.size()).isEqualTo(6);
+        assertThat(people.get(5).getName()).isEqualTo("YOU");
+        assertThat(people.get(5).getAge()).isEqualTo(4);
         System.out.println(people);
     }
 }
