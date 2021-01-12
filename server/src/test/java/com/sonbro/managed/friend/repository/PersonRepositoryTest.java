@@ -17,12 +17,16 @@ public class PersonRepositoryTest {
     void create() {
         Person person = new Person();
         person.setName("YOU");
-        person.setAge(4);
         personRepository.save(person);
         List<Person> people = personRepository.findAll();
         assertThat(people.size()).isEqualTo(6);
         assertThat(people.get(5).getName()).isEqualTo("YOU");
-        assertThat(people.get(5).getAge()).isEqualTo(4);
+        assertThat(people.get(5).getAge()).isEqualTo(null);
         System.out.println(people);
+    }
+
+    @Test
+    void personCreate() {
+        Person martin = new Person();
     }
 }

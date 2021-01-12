@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,10 +30,6 @@ public class PersonService {
         return personRepository.findByName(name);
     }
 
-    public List<Person> getPersonByBloodType(String bloodType) {
-        return personRepository.findByBloodType(bloodType);
-    }
-
     public List<Person> getPeopleByMonthOfBirthday(int monthOfBirthday) {
         return personRepository.findByMonthOfBirthday(monthOfBirthday);
     }
@@ -44,6 +41,18 @@ public class PersonService {
     public Person getPerson(Long id) {
         // No value present : 값이 없을때에 대한 로직 필요
         // Person person = personRepository.findById(id).get(); (get 은 optional)
+        System.out.println("go");
         return personRepository.findById(id).orElse(null);
+    }
+
+    @Transactional
+    public void putPerson(Long id, Person person) {
+        Person selectedPerson = personRepository.findById(id).orElseThrow(() -> new RuntimeException("No ID"));
+
+        selectedPerson
+                .setName(person.getName())
+                .setPhoneNumber(person.getPhoneNumber());
+
+        personRepository.save(selectedPerson);
     }
 }

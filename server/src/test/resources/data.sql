@@ -1,10 +1,9 @@
 
-insert into person (id, age, blood_type, name) values (1, 20, 'O', 'SON');
-insert into person (id, age, blood_type, name) values (2, 25, 'A', 'KIM');
-insert into person (id, age, blood_type, name) values (3, 30, 'A', 'PARK');
-insert into person (id, age, blood_type, name) values (4, 35, 'B', 'YOON');
-insert into person (id, age, blood_type, name) values (5, 40, 'AB', 'POUL');
-
+insert into person (id, name, year_of_birthday, month_of_birthday, day_of_birthday) values (1, 'SON', 1988, 8, 5);
+insert into person (id, name, year_of_birthday, month_of_birthday, day_of_birthday) values (2, 'KIM', 1990, 2, 3);
+insert into person (id, name, year_of_birthday, month_of_birthday, day_of_birthday) values (3, 'PARK', 1992, 8, 15);
+insert into person (id, name, year_of_birthday, month_of_birthday, day_of_birthday) values (4, 'YOON', 1995, 12, 8);
+insert into person (id, name, year_of_birthday, month_of_birthday, day_of_birthday) values (5, 'POUL', 1972, 7, 23);
 select * from block;
 insert into block (id, name) values (1, 'PARK');
 insert into block (id, name) values (2, 'YOON');

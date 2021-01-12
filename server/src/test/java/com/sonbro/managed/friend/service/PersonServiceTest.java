@@ -38,13 +38,7 @@ class PersonServiceTest {
     @Test
     void getPeopleByName() {
         List<Person> result = personService.getPeopleByName("YOON");
-        assertThat(result.get(0).getAge()).isEqualTo(35);
-    }
-
-    @Test
-    void getPersonByBloodType() {
-        List<Person> result = personService.getPersonByBloodType("A");
-        assertThat(result.size()).isEqualTo(2);
+        assertThat(result.get(0).getAge()).isEqualTo(27);
     }
 
     @Test
