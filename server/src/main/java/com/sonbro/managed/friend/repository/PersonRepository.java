@@ -12,8 +12,6 @@ import java.util.List;
 public interface PersonRepository extends JpaRepository<Person, Long> {
     List<Person> findByName(String name);
 
-    List<Person> findByBlockIsNull();
-
     @Query(value = "select person from Person person where person.birthday.monthOfBirthday = ?1")
     List<Person> findByMonthOfBirthday(int monthOfBirthday);
 

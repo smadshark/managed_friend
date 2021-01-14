@@ -30,9 +30,6 @@ public class Person {
     @ToString.Exclude
     private String phoneNumber;
 
-    @OneToOne
-    private Block block;
-
     // 나이
     public Integer getAge() {
         if(this.birthday != null) {
