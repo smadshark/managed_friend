@@ -30,8 +30,17 @@ public class PersonService {
     public Person getPerson(Long id) {
         // No value present : 값이 없을때에 대한 로직 필요
         // Person person = personRepository.findById(id).get(); (get 은 optional)
-        System.out.println("go");
         return personRepository.findById(id).orElse(null);
+    }
+
+    @Transactional
+    public void postPerson(Person person) {
+        Person newPerson = new Person();
+        newPerson.setName(person.getName())
+                .setBirthday(person.getBirthday())
+                .setPhoneNumber(person.getPhoneNumber());
+
+        personRepository.save(newPerson);
     }
 
     @Transactional
