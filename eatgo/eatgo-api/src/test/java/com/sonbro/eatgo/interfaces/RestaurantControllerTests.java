@@ -16,12 +16,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//.andExpect(MockMvcResultMatchers.content().string("hello world"));
 @SpringBootTest
 class RestaurantControllerTests {
     @Autowired
     private RestaurantController restaurantController;
-//    @Autowired
+
     private MockMvc mockMvc;
 
     @Test
@@ -42,19 +41,19 @@ class RestaurantControllerTests {
         mockMvc = MockMvcBuilders.standaloneSetup(restaurantController).build();
 
         mockMvc.perform(
-            MockMvcRequestBuilders.get("/restaurants/1004")
+            MockMvcRequestBuilders.get("/restaurants/1")
         )
         .andDo(MockMvcResultHandlers.print())
         .andExpect(status().isOk())
-        .andExpect(content().string(containsString("\"id\":1004")))
+        .andExpect(content().string(containsString("\"id\":1")))
         .andExpect(content().string(containsString("\"name\":\"Bob zip\"")));
 
         mockMvc.perform(
-            MockMvcRequestBuilders.get("/restaurants/2021")
+            MockMvcRequestBuilders.get("/restaurants/2")
         )
         .andDo(MockMvcResultHandlers.print())
         .andExpect(status().isOk())
-        .andExpect(content().string(containsString("\"id\":2021")))
+        .andExpect(content().string(containsString("\"id\":2")))
         .andExpect(content().string(containsString("\"name\":\"Cyber Food\"")));
     }
 }
