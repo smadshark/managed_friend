@@ -46,7 +46,8 @@ class RestaurantControllerTests {
         .andDo(MockMvcResultHandlers.print())
         .andExpect(status().isOk())
         .andExpect(content().string(containsString("\"id\":1")))
-        .andExpect(content().string(containsString("\"name\":\"Bob zip\"")));
+        .andExpect(content().string(containsString("\"name\":\"Bob zip\"")))
+        .andExpect(content().string(containsString("kimchi")));
 
         mockMvc.perform(
             MockMvcRequestBuilders.get("/restaurants/2")
