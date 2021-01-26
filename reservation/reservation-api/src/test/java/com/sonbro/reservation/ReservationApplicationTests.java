@@ -1,10 +1,10 @@
-package com.sonbro.eatgo;
+package com.sonbro.reservation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EatgoApplicationTests {
+class ReservationApplicationTests {
 
 	@Test
 	void contextLoads() {

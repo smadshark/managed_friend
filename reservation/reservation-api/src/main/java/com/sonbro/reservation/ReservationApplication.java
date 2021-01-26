@@ -1,13 +1,13 @@
-package com.sonbro.eatgo;
+package com.sonbro.reservation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EatgoApplication {
+public class ReservationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EatgoApplication.class, args);
+		SpringApplication.run(ReservationApplication.class, args);
 	}
 
 }
